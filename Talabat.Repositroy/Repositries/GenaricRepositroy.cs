@@ -31,7 +31,7 @@ namespace Talabat.Repositroy.Repositries
 
         public async Task<T> GetAsync(int id)
         {
-            if (typeof(T) == typeof(Product))
+            if (typeof(T) == typeof(Product)) 
             {
                 return await _context.Set<Product>().Where(p=>p.Id==id).Include(p => p.Brand).Include(p => p.Category).FirstOrDefaultAsync() as T;
             }
